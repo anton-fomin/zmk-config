@@ -13,6 +13,7 @@
 #define NAV 2
 #define SYM 3
 #define NUM 4
+#define KBD 5
 
 &mt {
   //  flavor = "tap-preferred";
@@ -106,32 +107,60 @@
             /*
             &kp ESC      | &kp TAB  | &kp RC(RS(TAB)) | &kp RC(TAB) | &kp C_VOL_UP |  | &kp BSPC  | &none     | &none     | &none     | &kp DEL
             &sk LCTRL    | &sk LGUI | &sk LALT        | &sk LSHIFT  | &kp C_VOL_DN |  | &kp LEFT  | &kp DOWN  | &kp UP    | &kp RIGHT | &none
-            &kp LC(SPC)  | &none    | &none           | &none       | &kp C_MUTE   |  | &kp HOME  | &kp PG_DN | &kp PG_UP | &kp END   | &none
+            &kp LC(SPC)  | &mo KBD  | &none           | &none       | &kp C_MUTE   |  | &kp HOME  | &kp PG_DN | &kp PG_UP | &kp END   | &none
                          |          |                 | &trans      | &trans       |  | &kp ENTER | &trans    |           |           |
             */
-        bindings = <
+            bindings = <
             &kp ESC       &kp TAB   &kp RC(RS(TAB))  &kp RC(TAB)  &kp C_VOL_UP    &kp BSPC   &none      &none      &none      &kp DEL
             &sk LCTRL     &sk LGUI  &sk LALT         &sk LSHIFT   &kp C_VOL_DN    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
-            &kp LC(SPC)   &none     &none            &none        &kp C_MUTE      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
+            &kp LC(SPC)   &mo KBD   &none            &none        &kp C_MUTE      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
                                                      &trans       &trans          &kp ENTER  &trans                          
+            >;
         };
         
-        right_layer {
-        bindings = <
-        &kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT                &kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN 
-        &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN             &kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp BKSP
-        &kp LSFT  &kp KPLS &kp LBKT &kp RBKT   &kp BSLH                &kp UNDER &kp LEFT &kp DOWN &kp UP  &kp RIGHT
-                      &mo 3 &kp LCTL                  &kp SPC  &mo 2 
-        >;
+        sym_layer {
+            /*
+            &kp TILDE  | &kp LBKT  | &kp LBRC | &kp LPAR  | &kp SQT   |  | &kp EXCL | &kp RPAR   | &kp RBRC | &kp RBKT | &kp COLON
+            &kp AMPS   | &kp MINUS | &kp PLUS | &kp EQUAL | &kp DQT   |  | &kp HASH | &sk LSHIFT | &sk LALT | &sk LGUI | &sk LCTRL
+            &kp CARET  | &kp PRCNT | &kp STAR | &kp BSLH  | &kp GRAVE |  | &kp AT   | &kp UNDER  | &kp LT   | &kp GT   | &kp DLLR
+                       |           |          | &trans    | &trans    |  | &trans   | &trans     |          |          |
+            */
+            bindings = <
+            &kp TILDE   &kp LBKT   &kp LBRC  &kp LPAR   &kp SQT      &kp EXCL  &kp RPAR    &kp RBRC  &kp RBKT  &kp COLON
+            &kp AMPS    &kp MINUS  &kp PLUS  &kp EQUAL  &kp DQT      &kp HASH  &sk LSHIFT  &sk LALT  &sk LGUI  &sk LCTRL
+            &kp CARET   &kp PRCNT  &kp STAR  &kp BSLH   &kp GRAVE    &kp AT    &kp UNDER   &kp LT    &kp GT    &kp DLLR
+                                             &trans     &trans       &trans    &trans                         
+            >;
         };    
         
-        tri_layer {
-        bindings = <
-        &kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5             &trans &trans   &trans   &trans  &trans
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                          &trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans 
-        &bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp F6 &kp F7                   &trans &kp PG_DN  &kp K_VOL_DN  &trans &trans   
-                     &trans &trans                      &trans &trans 
-        >;
+        num_layer {
+            /*
+            &kp N1      | &kp N2   | &kp N3   | &kp N4     | &kp N5  |  | &kp N6  | &kp N7     | &kp N8   | &kp N9   | &kp N0
+            &kp LCTRL   | &kp LGUI | &kp LALT | &kp LSHIFT | &kp F11 |  | &kp F12 | &kp LSHIFT | &kp LALT | &kp LGUI | &kp LCTRL
+            &kp F1      | &kp F2   | &kp F3   | &kp F4     | &kp F5  |  | &kp F6  | &kp F7     | &kp F8   | &kp F9   | &kp F10
+                        |          |          | &trans     | &trans  |  | &trans  | &trans     |          |          |
+            */
+            bindings = <
+            &kp N1       &kp N2    &kp N3    &kp N4      &kp N5     &kp N6   &kp N7      &kp N8    &kp N9    &kp N0
+            &kp LCTRL    &kp LGUI  &kp LALT  &kp LSHIFT  &kp F11    &kp F12  &kp LSHIFT  &kp LALT  &kp LGUI  &kp LCTRL
+            &kp F1       &kp F2    &kp F3    &kp F4      &kp F5     &kp F6   &kp F7      &kp F8    &kp F9    &kp F10
+                                             &trans      &trans     &trans   &trans                         
+            >;
+        };    
+
+        kbd_layer {
+            /*
+            &ext_power EP_OFF | &ext_power EP_ON | &none | &none  | &none  |  | &bt BT_SEL 0 | &bt BT_SEL 1 | &bt BT_SEL 2 | &none | &reset
+            &none             | &none            | &none | &none  | &none  |  | &none        | &none        | &none        | &none | &bootloader
+            &none             | &none            | &none | &none  | &none  |  | &bt BT_CLR   | &none        | &none        | &none | &none
+                              |                  |       | &trans | &trans |  | &tog CMK     | &trans       |              |       |
+            */
+            bindings = <
+            &ext_power EP_OFF  &ext_power EP_ON  &none  &none   &none     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &reset
+            &none              &none             &none  &none   &none     &none         &none         &none         &none  &bootloader
+            &none              &none             &none  &none   &none     &bt BT_CLR    &none         &none         &none  &none
+                                                        &trans  &trans    &tog CMK      &trans                            
+            >;
         };    
         
     };
