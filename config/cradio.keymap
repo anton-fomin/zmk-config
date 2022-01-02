@@ -8,6 +8,7 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/ext_power.h>
+#include <dt-bindings/zmk/outputs.h>
 
 #define DEF 0
 #define CMK 1
@@ -42,24 +43,47 @@
             key-positions = <17 16>;
             bindings = <&kp RALT>;
         };
-        
-        combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp LALT>;
-        };
-        
-        combo_lgui {
+
+        combo_ctrl_shift_nav {
             timeout-ms = <50>;
             key-positions = <12 13>;
-            bindings = <&kp LGUI>;
+            bindings = <&sk LA(LSHIFT)>;
+            layers = <NAV>
         };
-        
-        
-           combo_rgui {
+
+        combo_win_shift_nav {
+            timeout-ms = <50>;
+            key-positions = <11 13>;
+            bindings = <&sk LG(LSHIFT)>;
+            layers = <NAV>
+        };
+
+        combo_win_ctrl_nav {
+            timeout-ms = <50>;
+            key-positions = <11 12>;
+            bindings = <&sk LG(LALT)>;
+            layers = <NAV>
+        };
+
+        combo_ctrl_shift_sym {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&sk LA(LSHIFT)>;
+            layers = <SYM>
+        };
+
+        combo_win_shift_sym {
+            timeout-ms = <50>;
+            key-positions = <16 18>;
+            bindings = <&sk LG(LSHIFT)>;
+            layers = <SYM>
+        };
+
+        combo_win_ctrl_sym {
             timeout-ms = <50>;
             key-positions = <17 18>;
-            bindings = <&kp RGUI>;
+            bindings = <&sk LG(LALT)>;
+            layers = <SYM>
         };
     };
 
@@ -106,16 +130,16 @@
 
         nav_layer {
             /*
-            &kp ESC      | &kp TAB  | &kp RC(RS(TAB)) | &kp RC(TAB) | &kp C_VOL_UP |  | &kp BSPC  | &none     | &none     | &none     | &kp DEL
-            &sk LCTRL    | &sk LGUI | &sk LALT        | &sk LSHIFT  | &kp C_VOL_DN |  | &kp LEFT  | &kp DOWN  | &kp UP    | &kp RIGHT | &none
-            &kp LC(SPC)  | &mo KBD  | &none           | &none       | &kp C_MUTE   |  | &kp HOME  | &kp PG_DN | &kp PG_UP | &kp END   | &none
-                         |          |                 | &trans      | &trans       |  | &kp ENTER | &trans    |           |           |
+            &kp ESC     | &kp TAB  | &kp RC(RS(TAB)) | &kp RC(TAB) | &kp C_VOL_UP |  | &kp BSPC  | &none     | &none     | &none     | &kp DEL
+            &sk LCTRL   | &sk LGUI | &sk LALT        | &sk LSHIFT  | &kp C_VOL_DN |  | &kp LEFT  | &kp DOWN  | &kp UP    | &kp RIGHT | &none
+            &kp LC(SPC) | &mo KBD  | &none           | &caps_word  | &kp C_MUTE   |  | &kp HOME  | &kp PG_DN | &kp PG_UP | &kp END   | &none
+                        |          |                 | &trans      | &trans       |  | &kp ENTER | &trans    |           |           |
             */
             bindings = <
-            &kp ESC       &kp TAB   &kp RC(RS(TAB))  &kp RC(TAB)  &kp C_VOL_UP    &kp BSPC   &none      &none      &none      &kp DEL
-            &sk LCTRL     &sk LGUI  &sk LALT         &sk LSHIFT   &kp C_VOL_DN    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
-            &kp LC(SPC)   &mo KBD   &none            &none        &kp C_MUTE      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
-                                                     &trans       &trans          &kp ENTER  &trans                          
+            &kp ESC      &kp TAB   &kp RC(RS(TAB))  &kp RC(TAB)  &kp C_VOL_UP    &kp BSPC   &none      &none      &none      &kp DEL
+            &sk LCTRL    &sk LGUI  &sk LALT         &sk LSHIFT   &kp C_VOL_DN    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
+            &kp LC(SPC)  &mo KBD   &none            &caps_word   &kp C_MUTE      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
+                                                    &trans       &trans          &kp ENTER  &trans                          
             >;
         };
         
@@ -152,13 +176,13 @@
         kbd_layer {
             /*
             &ext_power EP_OFF | &ext_power EP_ON | &none | &none  | &none  |  | &bt BT_SEL 0 | &bt BT_SEL 1 | &bt BT_SEL 2 | &none | &reset
-            &none             | &none            | &none | &none  | &none  |  | &none        | &none        | &none        | &none | &bootloader
+            &none             | &none            | &none | &none  | &none  |  | &out OUT_BLE | &out OUT_USB | &none        | &none | &bootloader
             &none             | &none            | &none | &none  | &none  |  | &bt BT_CLR   | &none        | &none        | &none | &none
                               |                  |       | &trans | &trans |  | &tog CMK     | &trans       |              |       |
             */
             bindings = <
             &ext_power EP_OFF  &ext_power EP_ON  &none  &none   &none     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &reset
-            &none              &none             &none  &none   &none     &none         &none         &none         &none  &bootloader
+            &none              &none             &none  &none   &none     &out OUT_BLE  &out OUT_USB  &none         &none  &bootloader
             &none              &none             &none  &none   &none     &bt BT_CLR    &none         &none         &none  &none
                                                         &trans  &trans    &tog CMK      &trans                            
             >;
