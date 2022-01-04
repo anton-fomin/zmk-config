@@ -38,52 +38,40 @@
             bindings = <&kp TAB>;
         };
         
-        combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <17 16>;
-            bindings = <&kp RALT>;
-        };
-
         combo_ctrl_shift_nav {
             timeout-ms = <50>;
             key-positions = <12 13>;
             bindings = <&sk LA(LSHIFT)>;
-            layers = <NAV>;
         };
 
         combo_win_shift_nav {
             timeout-ms = <50>;
             key-positions = <11 13>;
             bindings = <&sk LG(LSHIFT)>;
-            layers = <NAV>;
         };
 
         combo_win_ctrl_nav {
             timeout-ms = <50>;
             key-positions = <11 12>;
             bindings = <&sk LG(LALT)>;
-            layers = <NAV>;
         };
 
         combo_ctrl_shift_sym {
             timeout-ms = <50>;
             key-positions = <16 17>;
             bindings = <&sk LA(LSHIFT)>;
-            layers = <SYM>;
         };
 
         combo_win_shift_sym {
             timeout-ms = <50>;
             key-positions = <16 18>;
             bindings = <&sk LG(LSHIFT)>;
-            layers = <SYM>;
         };
 
         combo_win_ctrl_sym {
             timeout-ms = <50>;
             key-positions = <17 18>;
             bindings = <&sk LG(LALT)>;
-            layers = <SYM>;
         };
     };
 
