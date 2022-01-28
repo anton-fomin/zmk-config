@@ -24,63 +24,6 @@
 
 / { 
 
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-        
-        combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
-        };
-        
-        combo_ctrl_shift_nav {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&sk LA(LSHIFT)>;
-            slow-release;
-        };
-
-        combo_win_shift_nav {
-            timeout-ms = <50>;
-            key-positions = <11 13>;
-            bindings = <&sk LG(LSHIFT)>;
-            slow-release;
-        };
-
-        combo_win_ctrl_nav {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&sk LG(LALT)>;
-            slow-release;
-        };
-
-        combo_ctrl_shift_sym {
-            timeout-ms = <50>;
-            key-positions = <16 17>;
-            bindings = <&sk LA(LSHIFT)>;
-            slow-release;
-        };
-
-        combo_win_shift_sym {
-            timeout-ms = <50>;
-            key-positions = <16 18>;
-            bindings = <&sk LG(LSHIFT)>;
-            slow-release;
-        };
-
-        combo_win_ctrl_sym {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&sk LG(LALT)>;
-            slow-release;
-        };
-    };
-
     conditional_layers {
         compatible = "zmk,conditional-layers";
         tri_layer {
