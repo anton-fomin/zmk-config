@@ -45,7 +45,7 @@
             &kp Q       &kp W  &kp F  &kp P    &kp B      &kp J     &kp L    &kp U     &kp Y    &kp SEMI
             &kp A       &kp R  &kp S  &kp T    &kp G      &kp M     &kp N    &kp E     &kp I    &kp O
             &mt LALT X  &kp C  &kp D  &kp V    &kp Z      &kp K     &kp H    &kp CMMA  &kp DOT  &kp SLASH
-                                      &mo NAV  &kp SPC    &kp LSFT  &mo SYM                    
+                                      &kp V  &kp SPC    &kp LSFT  &mo SYM                    
             >;
         };
 
