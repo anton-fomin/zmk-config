@@ -36,71 +36,42 @@
                 
         default_layer {
             /*
-            &kp Q      | &kp W | &kp F | &kp P   | &kp B   |  | &kp J    | &kp L   | &kp U    | &kp Y   | &kp SEMI
-            &kp A      | &kp R | &kp S | &kp T   | &kp G   |  | &kp M    | &kp N   | &kp E    | &kp I   | &kp O
-            &mt LALT X | &kp C | &kp D | &kp V   | &kp Z   |  | &kp K    | &kp H   | &kp CMMA | &kp DOT | &kp SLASH
-                       |       |       | &mo NAV | &kp SPC |  | &kp LSFT | &mo SYM |          |         |
-            */
             bindings = <
-            &kp Q       &kp W  &kp F  &kp P    &kp B      &kp J     &kp L    &kp U     &kp Y    &kp SEMI
-            &kp A       &kp R  &kp S  &kp T    &kp G      &kp M     &kp N    &kp E     &kp I    &kp O
-            &mt LALT X  &kp C  &kp D  &kp V    &kp Z      &kp K     &kp H    &kp CMMA  &kp DOT  &kp SLASH
-                                      &mo NAV  &kp SPC    &kp LSFT  &mo SYM                    
+            &kp Q  &kp W  &kp F  &kp P    &kp B      &kp J     &kp L    &kp U     &kp Y    &kp SEMI
+            &kp A  &kp R  &kp S  &kp T    &kp G      &kp M     &kp N    &kp E     &kp I    &kp O
+            &kp X  &kp C  &kp D  &kp V    &kp Z      &kp K     &kp H    &kp CMMA  &kp DOT  &kp SLASH
+                                 &mo NAV  &kp SPC    &kp LSFT  &mo SYM                    
             >;
         };
 
         nav_layer {
-            /*
-            &kp ESC     | &kp TAB  | &kp RC(RS(TAB)) | &kp RC(TAB) | &kp C_VOL_UP |  | &kp BSPC  | &none     | &none     | &none     | &kp DEL
-            &sk LCTRL   | &sk LGUI | &sk LALT        | &sk LSHIFT  | &kp C_VOL_DN |  | &kp LEFT  | &kp DOWN  | &kp UP    | &kp RIGHT | &none
-            &kp LC(SPC) | &mo KBD  | &none           | &caps_word  | &kp C_MUTE   |  | &kp HOME  | &kp PG_DN | &kp PG_UP | &kp END   | &none
-                        |          |                 | &trans      | &trans       |  | &kp ENTER | &trans    |           |           |
-            */
             bindings = <
-            &kp ESC      &kp TAB   &kp RC(RS(TAB))  &kp RC(TAB)  &kp C_VOL_UP    &kp BSPC   &none      &none      &none      &kp DEL
-            &sk LCTRL    &sk LGUI  &sk LALT         &sk LSHIFT   &kp C_VOL_DN    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
-            &kp LC(SPC)  &mo KBD   &none            &caps_word   &kp C_MUTE      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
-                                                    &trans       &trans          &kp ENTER  &trans                          
+            &kp ESC    &kp TAB   &kp RC(RS(TAB))  &kp RC(TAB)  &kp C_VOL_UP    &kp BSPC   &none      &none      &none      &kp DEL
+            &sk LALT   &sk LGUI  &sk LCTRL        &sk LSHIFT   &kp C_VOL_DN    &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT  &none
+            &kp LCTRL  &mo KBD   &none            &caps_word   &kp C_MUTE      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
+                                                  &trans       &kp LSHIFT      &kp ENTER  &trans                          
             >;
         };
         
         sym_layer {
-            /*
-            &kp TILDE  | &kp LBKT  | &kp LBRC | &kp LPAR  | &kp SQT   |  | &kp EXCL | &kp RPAR   | &kp RBRC | &kp RBKT | &kp COLON
-            &kp AMPS   | &kp MINUS | &kp PLUS | &kp EQUAL | &kp DQT   |  | &kp HASH | &sk LSHIFT | &sk LALT | &sk LGUI | &sk LCTRL
-            &kp CARET  | &kp PRCNT | &kp STAR | &kp BSLH  | &kp GRAVE |  | &kp AT   | &kp UNDER  | &kp LT   | &kp GT   | &kp DLLR
-                       |           |          | &trans    | &trans    |  | &trans   | &trans     |          |          |
-            */
             bindings = <
-            &kp TILDE   &kp LBKT   &kp LBRC  &kp LPAR   &kp SQT      &kp EXCL  &kp RPAR    &kp RBRC  &kp RBKT  &kp COLON
-            &kp AMPS    &kp MINUS  &kp PLUS  &kp EQUAL  &kp DQT      &kp HASH  &sk LSHIFT  &sk LALT  &sk LGUI  &sk LCTRL
-            &kp CARET   &kp PRCNT  &kp STAR  &kp BSLH   &kp GRAVE    &kp AT    &kp UNDER   &kp LT    &kp GT    &kp DLLR
-                                             &trans     &trans       &trans    &trans                         
+            &kp TILDE   &kp LBKT   &kp LBRC  &kp LPAR   &kp SQT      &kp EXCL  &kp RPAR    &kp RBRC   &kp RBKT  &kp COLON
+            &kp AMPS    &kp MINUS  &kp PLUS  &kp EQUAL  &kp DQT      &kp HASH  &sk LSHIFT  &sk LCTRL  &sk LGUI  &sk LALT
+            &kp CARET   &kp PRCNT  &kp STAR  &kp BSLH   &kp GRAVE    &kp AT    &kp UNDER   &kp LT     &kp GT    &kp DLLR
+                                             &trans     &sk RALT     &trans    &trans                         
             >;
         };    
         
         num_layer {
-            /*
-            &kp N1      | &kp N2   | &kp N3   | &kp N4     | &kp N5  |  | &kp N6  | &kp N7     | &kp N8   | &kp N9   | &kp N0
-            &kp LCTRL   | &kp LGUI | &kp LALT | &kp LSHIFT | &kp F11 |  | &kp F12 | &kp LSHIFT | &kp LALT | &kp LGUI | &kp LCTRL
-            &kp F1      | &kp F2   | &kp F3   | &kp F4     | &kp F5  |  | &kp F6  | &kp F7     | &kp F8   | &kp F9   | &kp F10
-                        |          |          | &trans     | &trans  |  | &trans  | &trans     |          |          |
-            */
             bindings = <
-            &kp N1       &kp N2    &kp N3    &kp N4      &kp N5     &kp N6   &kp N7      &kp N8    &kp N9    &kp N0
-            &kp LCTRL    &kp LGUI  &kp LALT  &kp LSHIFT  &kp F11    &kp F12  &kp LSHIFT  &kp LALT  &kp LGUI  &kp LCTRL
-            &kp F1       &kp F2    &kp F3    &kp F4      &kp F5     &kp F6   &kp F7      &kp F8    &kp F9    &kp F10
-                                             &trans      &trans     &trans   &trans                         
+            &kp N1    &kp N2    &kp N3     &kp N4      &kp N5     &kp N6   &kp N7      &kp N8     &kp N9    &kp N0
+            &kp LALT  &kp LGUI  &kp LCTRL  &kp LSHIFT  &kp F11    &kp F12  &kp LSHIFT  &kp LCTRL  &kp LGUI  &kp LALT
+            &kp F1    &kp F2    &kp F3     &kp F4      &kp F5     &kp F6   &kp F7      &kp F8     &kp F9    &kp F10
+                                           &trans      &trans     &trans   &trans                         
             >;
         };    
 
         kbd_layer {
-            /*
-            &ext_power EP_OFF | &ext_power EP_ON | &none | &none  | &none  |  | &bt BT_SEL 0 | &bt BT_SEL 1 | &bt BT_SEL 2 | &none | &reset
-            &none             | &none            | &none | &none  | &none  |  | &out OUT_BLE | &out OUT_USB | &none        | &none | &bootloader
-            &none             | &none            | &none | &none  | &none  |  | &bt BT_CLR   | &none        | &none        | &none | &none
-                              |                  |       | &trans | &trans |  | &trans       | &trans       |              |       |
-            */
             bindings = <
             &ext_power EP_OFF  &ext_power EP_ON  &none  &none   &none     &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &none  &reset
             &none              &none             &none  &none   &none     &out OUT_BLE  &out OUT_USB  &none         &none  &bootloader
